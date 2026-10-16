@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Management System</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f2f2f2;
+        }
+        header {
+            background: navy;
+            color: white;
+            padding: 15px;
+        }
+        .events {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px;
+        }
+        .event {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 220px;
+        }
+        button {
+            background: orange;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ABC College</h1>
+        <p>Home | Events | Contact</p>
+    </header>
+
+    <h2>College Events 2026</h2>
+
+    <div class="events">
+        <div class="event">
+            <h3>Dance Competition</h3>
+            <p>Date: 20 November 2026</p>
+            <p>Venue: College Auditorium</p>
+            <button onclick="register('Dance')">Register</button>
+        </div>
+
+        <div class="event">
+            <h3>Singing Competition</h3>
+            <p>Date: 22 November 2026</p>
+            <p>Venue: Seminar Hall</p>
+            <button onclick="register('Singing')">Register</button>
+        </div>
+
+        <div class="event">
+            <h3>Drama Competition</h3>
+            <p>Date: 25 November 2026</p>
+            <p>Venue: Main Stage</p>
+            <button onclick="register('Drama')">Register</button>
+        </div>
+    </div>
+
+    <script>
+        function register(event) {
+            alert("Registration successful for " + event + "!");
+        }
+    </script>
+
+</body>
+</html>
