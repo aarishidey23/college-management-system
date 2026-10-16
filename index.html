@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Management System</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f2f2f2;
+            margin: 0;
+        }
+
+        header {
+            background: navy;
+            color: white;
+            padding: 15px;
+        }
+
+        .events {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px;
+        }
+
+        .event {
+            background: white;
+            padding: 20px;
+            width: 220px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px;
+            width: 80%;
+        }
+
+        button {
+            background: orange;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #registration {
+            background: white;
+            padding: 20px;
+            margin: 25px auto;
+            max-width: 350px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ABC College</h1>
+        <p>Home | Events | Registration</p>
+    </header>
+
+    <h2>College Events 2026</h2>
+
+    <div class="events">
+
+        <div class="event">
+            <h3>Dance Competition</h3>
+            <p>Date: 20 November 2026</p>
+            <p>Venue: College Auditorium</p>
+            <button onclick="chooseEvent('Dance Competition')">
+                Register
+            </button>
+        </div>
+
+        <div class="event">
+            <h3>Singing Competition</h3>
+            <p>Date: 22 November 2026</p>
+            <p>Venue: Seminar Hall</p>
+            <button onclick="chooseEvent('Singing Competition')">
+                Register
+            </button>
+        </div>
+
+        <div class="event">
+            <h3>Drama Competition</h3>
+            <p>Date: 25 November 2026</p>
+            <p>Venue: Main Stage</p>
+            <button onclick="chooseEvent('Drama Competition')">
+                Register
+            </button>
+        </div>
+
+    </div>
+
+    <div id="registration">
+        <h2>Student Registration</h2>
+
+        <form onsubmit="register(event)">
+            <input type="text" id="name"
+                placeholder="Enter Student Name" required>
+
+            <input type="text" id="studentId"
+                placeholder="Enter Student ID Number" required>
+
+            <input type="text" id="eventName"
+                placeholder="Selected Event" readonly required>
+
+            <button type="submit">Submit Registration</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function chooseEvent(eventName) {
+            document.getElementById("eventName").value = eventName;
+            document.getElementById("registration").scrollIntoView();
+        }
+
+        function register(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let id = document.getElementById("studentId").value;
+            let activity = document.getElementById("eventName").value;
+
+            document.getElementById("message").innerHTML =
+                "Registration Successful!<br>" +
+                "Student: " + name + "<br>" +
+                "Student ID: " + id + "<br>" +
+                "Event: " + activity;
+        }
+    </script>
+
+</body>
+</html>
